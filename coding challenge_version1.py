@@ -59,7 +59,7 @@ while True:
         break
     else:
         print("Solution corresponding to the number you have inputted doesn't exist please try again")
-N = int(input("Enter a integer number N: "))
+N = int(input("Enter a integer number N: ")) #defines the number of particles
 positions = [] # inside is [x,y,radii]
 
 fig = plt.gcf() #Defines a figure object
@@ -67,11 +67,11 @@ ax = fig.gca() #Defines an axis object
 plt.xlim(0,20)
 plt.ylim(0,20)
 
-while len(positions) != N:
+while len(positions) != N: #a loop that plots each circle on a random part of the area
     add = True
-    p = random.randint(u,f)
+    p = random.randint(u,f) # u, f creates a range between those numbers
     position = [(random.randint(0,200) / 10),(random.randint(0,200) / 10)]
-    if p < b:
+    if p < b: #with b the numbers given by f and u allows us to create a probability relative to the percentage of particles in a given solution
         for x in position:
             R2variant = random.randint(0,1)
             if x + R2variant > 20 or x - R2variant < 0:
